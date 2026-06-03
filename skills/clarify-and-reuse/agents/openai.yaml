@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clarify and Reuse"
+  short_description: "Clarify needs and reuse proven solutions"
+  default_prompt: "Use $clarify-and-reuse to clarify the real need and prefer suitable existing solutions before custom work."

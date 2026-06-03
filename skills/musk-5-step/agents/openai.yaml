@@ -1,0 +1,4 @@
+interface:
+  display_name: "Musk 5-Step Method"
+  short_description: "Run the clarify-delete-simplify-accelerate-automate workflow"
+  default_prompt: "Use $musk-5-step to clarify, delete, simplify, accelerate, then automate with risk-aware validation."

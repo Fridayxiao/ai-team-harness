@@ -1,0 +1,7 @@
+interface:
+  display_name: "Automation Opportunity Review"
+  short_description: "Find automation opportunities after work"
+  default_prompt: "Use $automation-opportunity-review to review recent work for lightweight automation opportunities."
+
+policy:
+  allow_implicit_invocation: false
