@@ -1,14 +1,14 @@
 ---
 name: musk-5-step
 description: >
-  Use this skill whenever the user wants to plan, design, debug, improve, scale, or question
-  any software system, product feature, workflow, team process, or operational setup —
-  even if they phrase it casually: "how do I fix this", "should we build X", "our releases
-  are too slow", "this codebase is a mess", "help me think through Y". Also trigger for
-  architecture reviews, incident retrospectives, feature scoping, and any request where
-  the user is trying to make something better or faster. Do NOT wait for the user to
-  explicitly mention the 5-step method. Do NOT trigger for pure knowledge questions
-  with no design or improvement intent.
+  Use this skill when the user explicitly asks to apply the Musk 5-step method,
+  asks to challenge or simplify requirements before optimizing, or wants a structured
+  first-principles review of a system, product feature, workflow, team process,
+  architecture plan, incident, or operational setup. Also use when the user specifically
+  mentions clarify/delete/simplify/accelerate/automate, removing unnecessary requirements,
+  or questioning whether work should exist before building it. Do not trigger for ordinary
+  planning, debugging, implementation, architecture review, or "make this better" requests
+  unless the user wants this five-step lens or a deliberate requirement-challenge pass.
 ---
 
 # Musk 5-Step Method

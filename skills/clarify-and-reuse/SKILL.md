@@ -1,73 +1,69 @@
 ---
 name: clarify-and-reuse
-description: Use when solving implementation or design tasks. Clarify the real need, inspect existing context, and prefer proven existing solutions before custom work.
+description: Use when an implementation, design, debugging, integration, or refactoring task may have unclear intent, hidden constraints, or existing project/platform solutions worth reusing. Clarify just enough to avoid wrong work, inspect local context, and prefer established or currently mainstream solutions before custom code. Do not use for tiny mechanical edits where the intent and implementation path are already obvious.
 ---
 
 # Clarify and Reuse
 
 ## Core Rule
 
-Start by clarifying the real need before choosing an implementation path.
+Clarify enough to avoid doing the wrong work. Reuse before inventing.
 
-Do not jump directly into custom work. First understand the user's goal, success criteria, constraints, existing context, and likely hidden assumptions. Then prefer suitable existing solutions over building new ones.
+Do not turn every task into a process. Match the depth of clarification and research to the risk, ambiguity, and cost of being wrong.
 
-## Working Order
+## When To Apply
 
-Follow this order for non-trivial design, implementation, modification, debugging, or integration tasks:
+Use this skill for non-trivial work, especially when:
 
-1. Restate the actual goal and identify ambiguity.
-2. Inspect the current context: repository structure, docs, existing code, conventions, utilities, components, workflows, and prior patterns.
-3. Check already-available capabilities: installed packages, framework features, platform APIs, standard libraries, internal tools, and existing integrations.
-4. Evaluate proven external solutions when the current project does not already provide a good fit. Prefer mature, maintained, documented, compatible, and widely adopted options.
-5. Build custom only when existing options are unsuitable, unnecessarily heavy, incompatible, risky, poorly maintained, or less efficient than a focused implementation.
+- The request could be interpreted more than one way.
+- The work may duplicate existing code, components, helpers, workflows, dependencies, or platform features.
+- A design choice, package choice, abstraction, integration, or refactor would be hard to reverse.
+- The user asks for a solution but the real goal or success condition is not yet clear.
 
-## Before Recommending a Path
+Keep it lightweight or skip it for tiny mechanical edits where the goal, target files, and implementation path are obvious.
 
-State what was checked before proposing the solution.
+## Working Loop
 
-Use concrete statements such as:
+1. Identify the real goal, success condition, constraints, and any ambiguity that would change the approach.
+2. Inspect existing context first: docs, code, tests, package manifests, conventions, utilities, components, services, schemas, commands, and prior patterns.
+3. Check available capabilities in this order:
+   - Existing project code or patterns
+   - Installed dependencies
+   - Framework, platform, or standard library features
+   - Researched current mainstream, modern, and well-maintained external solutions or documented ecosystem patterns
+   - Focused custom implementation
+4. If no local or installed option fits, investigate the current ecosystem before custom work. Check official docs, package or framework guidance, maintenance status, compatibility, adoption, and deprecation or migration notes when relevant.
+5. Choose the smallest suitable path.
+6. If custom work is needed, state why local, installed, platform, and researched external options were not a good fit.
 
-- The project already has a suitable helper, so reuse it.
-- The installed dependency already covers this need, so use it instead of adding another package.
-- A mature ecosystem library fits better than custom logic.
-- Existing options do not fit because of compatibility, size, licensing, maintenance, or domain-specific constraints.
+## Decision Rules
 
-When multiple reasonable options exist, compare tradeoffs briefly and recommend a default.
+- Ask the user only when the answer would materially change the path. Otherwise state the assumption and proceed.
+- Prefer adapting an existing primitive over adding a parallel one.
+- Prefer an installed dependency or platform feature over adding a new dependency.
+- When local and installed options do not fit, research before inventing. Do not rely on memory for fast-moving ecosystems, current best practices, or package choices.
+- Prefer the solution that is suitable, current, mainstream enough to be supportable, actively maintained, compatible with the project, and appropriately scoped.
+- Add a new dependency only when the researched option is clearly better than local code.
+- Build custom code when existing options are too heavy, incompatible, risky, poorly maintained, licensing-problematic, or do not fit the domain.
+- Avoid general abstractions until repeated need is visible.
 
-## Reuse Standards
+## What To Report
 
-Prefer composition over reinvention.
+Before committing to a path, briefly say what was checked and why the chosen path fits. Examples:
 
-Reuse and extend existing primitives, patterns, abstractions, components, utilities, hooks, services, schemas, templates, configuration, and conventions whenever they fit the need.
+- "The project already has a helper for this, so I will extend it."
+- "The installed dependency already covers this; no new package is needed."
+- "There is no suitable local or installed option, so I checked the current ecosystem before choosing this library."
+- "The current mainstream options are too heavy for this case, so a small custom implementation is clearer than adding a dependency."
+- "There are two viable paths; here is the tradeoff and my recommended default."
 
-Avoid adding a new dependency when an existing dependency or platform feature already solves the problem well.
+Keep the report proportional. For small tasks, one sentence is enough.
 
-## Custom Implementation Rules
+## Avoid
 
-Write custom code only when there is a clear reason.
-
-When custom work is necessary:
-
-1. Explain why existing options are insufficient.
-2. Keep the design minimal and focused.
-3. Make the result reusable when the need is likely to recur.
-4. Avoid building generic infrastructure for a one-off requirement.
-5. Document the boundary between domain-specific logic and reusable primitives when useful.
-
-## Anti-Patterns
-
-Avoid these behaviors:
-
-- Solving the literal request without rethinking the actual user need.
-- Implementing before checking existing project code and dependencies.
-- Duplicating helpers, wrappers, components, workflows, or utilities.
+- Solving the literal request while missing the real user need.
+- Rebuilding a helper, component, wrapper, workflow, or utility that already exists.
 - Adding overlapping libraries.
-- Rebuilding common functionality that mature tools already handle.
-- Creating broad abstractions before repeated need is proven.
-- Choosing custom code because it feels faster without checking reuse options first.
-
-## Default Mindset
-
-Clarify first. Reuse second. Customize last.
-
-Use proven building blocks where they fit. Build new solutions only when the need is specific, valuable, and clearly justified.
+- Creating broad infrastructure for a one-off.
+- Blocking progress with excessive clarification when a safe assumption is available.
+- Choosing custom code because it feels faster without first checking obvious reuse paths.

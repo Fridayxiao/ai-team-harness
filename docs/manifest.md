@@ -1,29 +1,29 @@
 # Harness Manifest
 
-Date captured: 2026-06-03
+Date captured: 2026-06-24
 
 ## Skills (Flat Namespace)
 
 | Skill | Source Path |
 |---|---|
 | `automation-opportunity-review` | `/Users/david/.codex/skills/automation-opportunity-review` |
-| `brainstorming` | `/Users/david/.gemini/antigravity/skills/brainstorming` |
+| `brainstorming` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/brainstorming` |
 | `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
-| `diagnose` | `/Users/david/.agents/skills/diagnose` |
-| `executing-plans` | `/Users/david/.gemini/antigravity/skills/executing-plans` |
-| `finishing-a-development-branch` | `/Users/david/.gemini/antigravity/skills/finishing-a-development-branch` |
+| `diagnose` | `/Users/david/.agents/skills/diagnosing-bugs` adapted as `diagnose` |
+| `executing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/executing-plans` |
+| `finishing-a-development-branch` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/finishing-a-development-branch` |
 | `grill-with-docs` | `/Users/david/.agents/skills/grill-with-docs` |
 | `improve-codebase-architecture` | `/Users/david/.agents/skills/improve-codebase-architecture` |
 | `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
 | `prototype` | `/Users/david/.agents/skills/prototype` |
-| `receiving-code-review` | `/Users/david/.gemini/antigravity/skills/receiving-code-review` |
+| `receiving-code-review` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/receiving-code-review` |
 | `tdd` | `/Users/david/.agents/skills/tdd` |
 | `to-prd` | `/Users/david/.agents/skills/to-prd` |
-| `using-superpowers` | `/Users/david/.gemini/antigravity/skills/using-superpowers` |
-| `verification-before-completion` | `/Users/david/.gemini/antigravity/skills/verification-before-completion` |
+| `using-superpowers` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/using-superpowers` |
+| `verification-before-completion` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/verification-before-completion` |
 | `write-handoff` | `/Users/david/.codex/skills/write-handoff` |
-| `writing-plans` | `/Users/david/.gemini/antigravity/skills/writing-plans` |
-| `zoom-out` | `/Users/david/.agents/skills/zoom-out` |
+| `writing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/writing-plans` |
+| `zoom-out` | retained from harness and schema-normalized; upstream `mattpocock/skills` removed this skill |
 
 ## Agents
 

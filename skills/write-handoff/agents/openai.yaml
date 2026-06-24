@@ -1,4 +1,4 @@
 interface:
   display_name: "Write Handoff"
-  short_description: "Draft clear, complete handoff notes"
-  default_prompt: "Use $write-handoff to draft a balanced, complete handoff for this work."
+  short_description: "Record useful handoff context"
+  default_prompt: "Use $write-handoff to record the context another person or agent should know."
