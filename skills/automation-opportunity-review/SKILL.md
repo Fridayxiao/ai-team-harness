@@ -3,7 +3,7 @@ name: automation-opportunity-review
 description: Review recent completed work to identify reusable knowledge and lightweight automation opportunities worth preserving. Use only when the user explicitly asks to find reusable lessons, preserve hard-won context, review a completed workflow for automation or knowledge candidates, capture error-resolution notes, reduce repeated manual work, or run an automation/reuse opportunity review. Do not trigger proactively at the end of normal tasks unless the user asks.
 ---
 
-# Reuse Opportunity Review
+# Automation Opportunity Review
 
 ## Overview
 

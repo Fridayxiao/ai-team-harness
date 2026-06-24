@@ -9,10 +9,13 @@ Date captured: 2026-06-24
 | `automation-opportunity-review` | `/Users/david/.codex/skills/automation-opportunity-review` |
 | `brainstorming` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/brainstorming` |
 | `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
+| `codebase-design` | `/Users/david/.agents/skills/codebase-design` |
 | `diagnose` | `/Users/david/.agents/skills/diagnosing-bugs` adapted as `diagnose` |
+| `domain-modeling` | `/Users/david/.agents/skills/domain-modeling` |
 | `executing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/executing-plans` |
 | `finishing-a-development-branch` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/finishing-a-development-branch` |
-| `grill-with-docs` | `/Users/david/.agents/skills/grill-with-docs` |
+| `grill-with-docs` | `/Users/david/.agents/skills/grill-with-docs`, expanded for harness portability |
+| `grilling` | `/Users/david/.agents/skills/grilling` |
 | `improve-codebase-architecture` | `/Users/david/.agents/skills/improve-codebase-architecture` |
 | `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
 | `prototype` | `/Users/david/.agents/skills/prototype` |

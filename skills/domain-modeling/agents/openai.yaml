@@ -1,0 +1,4 @@
+interface:
+  display_name: "Domain Modeling"
+  short_description: "Sharpen project domain language"
+  default_prompt: "Use $domain-modeling to sharpen this project domain model."

@@ -14,24 +14,27 @@ Portable harness for sharing one curated skill set and one Codex sub-agent team 
 
 This harness intentionally includes only broadly reusable skills:
 
-- `diagnose`
-- `tdd`
-- `prototype`
-- `zoom-out`
-- `grill-with-docs`
-- `improve-codebase-architecture`
-- `to-prd`
+- `automation-opportunity-review`
 - `brainstorming`
+- `clarify-and-reuse`
+- `codebase-design`
+- `diagnose`
+- `domain-modeling`
 - `executing-plans`
 - `finishing-a-development-branch`
+- `grill-with-docs`
+- `grilling`
+- `improve-codebase-architecture`
+- `musk-5-step`
+- `prototype`
 - `receiving-code-review`
+- `tdd`
+- `to-prd`
 - `using-superpowers`
 - `verification-before-completion`
 - `write-handoff`
 - `writing-plans`
-- `automation-opportunity-review`
-- `clarify-and-reuse`
-- `musk-5-step`
+- `zoom-out`
 
 ## Agent Team
 

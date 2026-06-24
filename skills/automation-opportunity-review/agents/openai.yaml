@@ -1,5 +1,5 @@
 # OpenAI Codex agent interface metadata.
 interface:
-  display_name: "Reuse Opportunity Review"
-  short_description: "Find reusable knowledge, fixes, workflows, and automation opportunities"
+  display_name: "Automation Opportunity Review"
+  short_description: "Find reusable knowledge and automation opportunities"
   default_prompt: "Use $automation-opportunity-review to review recent work for reusable knowledge and automation candidates."

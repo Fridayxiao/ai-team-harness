@@ -4,7 +4,10 @@ set -euo pipefail
 HARNESS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 expected_skills=(
+  "skills/codebase-design"
   "skills/diagnose"
+  "skills/domain-modeling"
+  "skills/grilling"
   "skills/tdd"
   "skills/prototype"
   "skills/zoom-out"
