@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set Goal"
+  short_description: "Define clear goals and done conditions"
+  default_prompt: "Use $set-goal to turn this objective into a clear goal with done conditions and scope."

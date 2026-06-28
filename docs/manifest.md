@@ -1,32 +1,57 @@
 # Harness Manifest
 
-Date captured: 2026-06-24
+Date captured: 2026-06-28
 
-## Skills (Flat Namespace)
+## Custom Skills From `/Users/david/.codex/skills`
 
 | Skill | Source Path |
 |---|---|
 | `automation-opportunity-review` | `/Users/david/.codex/skills/automation-opportunity-review` |
-| `brainstorming` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/brainstorming` |
 | `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
+| `develop-web-game` | `/Users/david/.codex/skills/develop-web-game` |
+| `frontend-design` | `/Users/david/.codex/skills/frontend-design` |
+| `hatch-pet` | `/Users/david/.codex/skills/hatch-pet` |
+| `langchain-langgraph-docs-guide` | `/Users/david/.codex/skills/langchain-langgraph-docs-guide` |
+| `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
+| `openai-docs` | `/Users/david/.codex/skills/openai-docs` |
+| `playwright` | `/Users/david/.codex/skills/playwright` |
+| `set-goal` | `/Users/david/.codex/skills/set-goal` |
+| `write-handoff` | `/Users/david/.codex/skills/write-handoff` |
+
+## Custom Skills From `/Users/david/.agents/skills`
+
+| Skill | Source Path |
+|---|---|
 | `codebase-design` | `/Users/david/.agents/skills/codebase-design` |
-| `diagnose` | `/Users/david/.agents/skills/diagnosing-bugs` adapted as `diagnose` |
+| `diagnosing-bugs` | `/Users/david/.agents/skills/diagnosing-bugs` |
 | `domain-modeling` | `/Users/david/.agents/skills/domain-modeling` |
-| `executing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/executing-plans` |
-| `finishing-a-development-branch` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/finishing-a-development-branch` |
-| `grill-with-docs` | `/Users/david/.agents/skills/grill-with-docs`, expanded for harness portability |
+| `grill-with-docs` | `/Users/david/.agents/skills/grill-with-docs` |
 | `grilling` | `/Users/david/.agents/skills/grilling` |
 | `improve-codebase-architecture` | `/Users/david/.agents/skills/improve-codebase-architecture` |
-| `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
 | `prototype` | `/Users/david/.agents/skills/prototype` |
-| `receiving-code-review` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/receiving-code-review` |
+| `setup-matt-pocock-skills` | `/Users/david/.agents/skills/setup-matt-pocock-skills` |
 | `tdd` | `/Users/david/.agents/skills/tdd` |
+| `to-issues` | `/Users/david/.agents/skills/to-issues` |
 | `to-prd` | `/Users/david/.agents/skills/to-prd` |
+
+## Retained Upstream And Legacy Skills
+
+| Skill | Source Path |
+|---|---|
+| `brainstorming` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/brainstorming` |
+| `executing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/executing-plans` |
+| `finishing-a-development-branch` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/finishing-a-development-branch` |
+| `receiving-code-review` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/receiving-code-review` |
 | `using-superpowers` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/using-superpowers` |
 | `verification-before-completion` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/verification-before-completion` |
-| `write-handoff` | `/Users/david/.codex/skills/write-handoff` |
 | `writing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/writing-plans` |
 | `zoom-out` | retained from harness and schema-normalized; upstream `mattpocock/skills` removed this skill |
+
+## Personal Plugins
+
+| Plugin | Source Path |
+|---|---|
+| `orchestrated-delivery` | `/Users/david/.codex/plugins/cache/personal/orchestrated-delivery/0.4.0` |
 
 ## Agents
 
@@ -44,6 +69,7 @@ Date captured: 2026-06-24
 ## Portability Notes
 
 - The copied skills are self-contained directories.
+- Custom skill sync excludes `.system`, `_archive`, upstream plugin cache directories, and Cloudflare-published skills unless explicitly listed as retained.
 - The harness does not depend on the original source paths after copying.
 - The install script defaults to `~/.agents/skills` so multiple agent tools can consume the same skill directory.
 - Agent TOML files are Codex-specific and should be copied to a Codex agents directory when used.

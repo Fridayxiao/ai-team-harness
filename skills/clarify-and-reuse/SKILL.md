@@ -1,69 +1,87 @@
 ---
 name: clarify-and-reuse
-description: Use when an implementation, design, debugging, integration, or refactoring task may have unclear intent, hidden constraints, or existing project/platform solutions worth reusing. Clarify just enough to avoid wrong work, inspect local context, and prefer established or currently mainstream solutions before custom code. Do not use for tiny mechanical edits where the intent and implementation path are already obvious.
+description: Use when an implementation, design, debugging, integration, or refactoring task may have unclear intent, hidden constraints, or existing project, dependency, framework, platform, or current ecosystem solutions worth reusing. Clarify the real goal and prefer reuse before custom code. Do not use for tiny mechanical edits where intent and implementation path are already obvious.
 ---
 
 # Clarify and Reuse
 
-## Core Rule
+## Philosophy
 
-Clarify enough to avoid doing the wrong work. Reuse before inventing.
+**Core principle**: Do not solve the wrong problem, and do not rebuild something the project or ecosystem already gives you.
 
-Do not turn every task into a process. Match the depth of clarification and research to the risk, ambiguity, and cost of being wrong.
+Good clarification is targeted. It asks only the questions that can change the path. Good reuse starts local, respects project vocabulary and patterns, checks installed capabilities, and researches current mainstream options before inventing custom work when local options do not fit.
 
-## When To Apply
+Bad clarification turns every request into an interview. Bad reuse blindly forces existing code into the wrong shape. Bad custom work starts from memory, adds parallel abstractions, or chooses a new dependency before checking what already exists.
 
-Use this skill for non-trivial work, especially when:
+## Anti-Pattern: Custom-First Work
 
-- The request could be interpreted more than one way.
-- The work may duplicate existing code, components, helpers, workflows, dependencies, or platform features.
-- A design choice, package choice, abstraction, integration, or refactor would be hard to reverse.
-- The user asks for a solution but the real goal or success condition is not yet clear.
+**DO NOT start by designing new code, abstractions, dependencies, or workflows before checking for a suitable existing path.**
 
-Keep it lightweight or skip it for tiny mechanical edits where the goal, target files, and implementation path are obvious.
+This produces bad work:
 
-## Working Loop
+- The literal request gets implemented while the real goal remains unclear
+- Existing helpers, components, services, schemas, commands, or conventions are duplicated
+- New dependencies overlap with installed ones
+- Fast-moving ecosystem choices are made from stale memory
+- One-off needs become broad infrastructure
 
-1. Identify the real goal, success condition, constraints, and any ambiguity that would change the approach.
-2. Inspect existing context first: docs, code, tests, package manifests, conventions, utilities, components, services, schemas, commands, and prior patterns.
-3. Check available capabilities in this order:
-   - Existing project code or patterns
-   - Installed dependencies
-   - Framework, platform, or standard library features
-   - Researched current mainstream, modern, and well-maintained external solutions or documented ecosystem patterns
-   - Focused custom implementation
-4. If no local or installed option fits, investigate the current ecosystem before custom work. Check official docs, package or framework guidance, maintenance status, compatibility, adoption, and deprecation or migration notes when relevant.
-5. Choose the smallest suitable path.
-6. If custom work is needed, state why local, installed, platform, and researched external options were not a good fit.
+**Correct approach**: clarify only the ambiguity that matters, then climb the reuse ladder until a suitable path appears.
 
-## Decision Rules
+## Reuse Ladder
 
-- Ask the user only when the answer would materially change the path. Otherwise state the assumption and proceed.
-- Prefer adapting an existing primitive over adding a parallel one.
-- Prefer an installed dependency or platform feature over adding a new dependency.
-- When local and installed options do not fit, research before inventing. Do not rely on memory for fast-moving ecosystems, current best practices, or package choices.
-- Prefer the solution that is suitable, current, mainstream enough to be supportable, actively maintained, compatible with the project, and appropriately scoped.
-- Add a new dependency only when the researched option is clearly better than local code.
-- Build custom code when existing options are too heavy, incompatible, risky, poorly maintained, licensing-problematic, or do not fit the domain.
-- Avoid general abstractions until repeated need is visible.
+The reuse ladder is the preferred search order for a solution. It is not bureaucracy. Stop when a level gives you a suitable path.
 
-## What To Report
+1. Existing project code, docs, tests, conventions, utilities, components, services, schemas, commands, or prior patterns
+2. Installed dependencies or existing configuration
+3. Framework, platform, runtime, or standard library features
+4. Current mainstream external libraries, tools, services, or documented ecosystem patterns
+5. Focused custom implementation
 
-Before committing to a path, briefly say what was checked and why the chosen path fits. Examples:
+If the local project and installed dependencies do not fit, investigate the current ecosystem before inventing. Check official docs or primary sources when APIs, package choices, framework guidance, product behavior, deprecations, or best practices may have changed.
+
+## Workflow
+
+### 1. Orient
+
+Identify the real goal, success condition, constraints, and the ambiguity that could change the approach. Ask the user only when the answer materially changes the path; otherwise state the assumption and proceed.
+
+### 2. Inspect Local Context
+
+Read the relevant project context before designing: docs, code, tests, package manifests, commands, conventions, helpers, components, services, schemas, and nearby patterns.
+
+### 3. Check The Reuse Ladder
+
+Prefer adapting an existing primitive over adding a parallel one. Prefer installed, platform, or framework capabilities over adding a new dependency. Add a dependency only when it is clearly better than local or platform code for this task.
+
+### 4. Research When Local Options Do Not Fit
+
+When no local, installed, framework, platform, or standard-library option fits, research the current mainstream path before custom work. Consider maintenance, compatibility, adoption, licensing, deprecation or migration notes, and fit to the project's constraints.
+
+### 5. Choose The Best-Fitting Path
+
+Pick the path that fits the goal, project shape, maintenance burden, and reversibility. Reuse is not a goal by itself: if an existing option would contort the codebase, hide important domain behavior, or add more long-term cost than it removes, choose a focused custom path and explain why.
+
+Keep the chosen path narrow at first. Expand an abstraction only when a second real use makes the shape clearer.
+
+## What To Say
+
+Before committing to the path, briefly say what mattered:
 
 - "The project already has a helper for this, so I will extend it."
 - "The installed dependency already covers this; no new package is needed."
 - "There is no suitable local or installed option, so I checked the current ecosystem before choosing this library."
-- "The current mainstream options are too heavy for this case, so a small custom implementation is clearer than adding a dependency."
+- "The mainstream options are too heavy for this case, so a small custom implementation is clearer than adding a dependency."
 - "There are two viable paths; here is the tradeoff and my recommended default."
 
 Keep the report proportional. For small tasks, one sentence is enough.
 
-## Avoid
+## Checklist Per Use
 
-- Solving the literal request while missing the real user need.
-- Rebuilding a helper, component, wrapper, workflow, or utility that already exists.
-- Adding overlapping libraries.
-- Creating broad infrastructure for a one-off.
-- Blocking progress with excessive clarification when a safe assumption is available.
-- Choosing custom code because it feels faster without first checking obvious reuse paths.
+```text
+[ ] Real goal and success condition are clear enough
+[ ] Local docs, code, tests, packages, and patterns were checked when relevant
+[ ] Installed, framework, platform, or standard-library options were considered before new dependencies
+[ ] Current ecosystem was researched when local options did not fit or facts may be stale
+[ ] Chosen path fits the goal, project shape, maintenance burden, and reversibility
+[ ] Custom code or new dependencies have a concrete reason
+```

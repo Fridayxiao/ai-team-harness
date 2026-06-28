@@ -1,0 +1,4 @@
+interface:
+  display_name: "LangChain LangGraph Docs Guide"
+  short_description: "Verify Deep Agents/LangChain/LangGraph/LangSmith docs with strict reference-URL matching"
+  default_prompt: "Implement, debug, or migrate Deep Agents, LangChain, LangGraph, or LangSmith work in this workspace. Route to the smallest relevant shard, prioritize Overview and Quickstart first across shards, then apply framework-specific core ordering (for LangChain: Agents, Models, Messages, Tools, Runtime, Middleware, Structured output, Multi-agent). Fetch docs only with exact URLs from skill references and mandatory first-check lists; never add/remove `.md` or rewrite suffixes. Verify APIs against official docs and return citation-backed guidance with migration notes."

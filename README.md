@@ -1,39 +1,60 @@
 # AI Team Harness
 
-Portable harness for sharing one curated skill set and one Codex sub-agent team across machines, projects, and agent environments.
+Portable harness for sharing David's custom skills, selected retained upstream skills, and one Codex sub-agent team across machines, projects, and agent environments.
 
 ## Contents
 
-- `skills/`: portable copies of selected reusable skills (currently in a flat namespace).
+- `skills/`: portable copies of custom and retained skills (currently in a flat namespace).
 - `agents/`: the 8 Codex sub-agent TOML files.
 - `plugins/`: portable Codex plugins that bundle related skills and plugin metadata.
 - `docs/manifest.md`: source paths and intended use.
 - `scripts/install-global-skills.sh`: copy skills into a user-level skills directory.
 - `scripts/verify-harness.sh`: check that the expected skills and agents exist.
 
-## Core Skills
+## Custom Skills
 
-This harness intentionally includes only broadly reusable skills:
+The custom skill sources are local user-level directories:
+
+- `/Users/david/.codex/skills`
+- `/Users/david/.agents/skills`
+
+Current custom skills:
 
 - `automation-opportunity-review`
-- `brainstorming`
 - `clarify-and-reuse`
 - `codebase-design`
-- `diagnose`
+- `develop-web-game`
+- `diagnosing-bugs`
 - `domain-modeling`
-- `executing-plans`
-- `finishing-a-development-branch`
+- `frontend-design`
 - `grill-with-docs`
 - `grilling`
+- `hatch-pet`
 - `improve-codebase-architecture`
+- `langchain-langgraph-docs-guide`
 - `musk-5-step`
+- `openai-docs`
+- `playwright`
 - `prototype`
-- `receiving-code-review`
+- `set-goal`
+- `setup-matt-pocock-skills`
 - `tdd`
+- `to-issues`
 - `to-prd`
+- `write-handoff`
+
+Cloudflare-published skills that may exist under `~/.codex/skills` are intentionally excluded from this harness.
+
+## Retained Skills
+
+The harness also retains selected upstream or legacy skills for portability:
+
+- `brainstorming`
+- `executing-plans`
+- `finishing-a-development-branch`
+- `receiving-code-review`
 - `using-superpowers`
 - `verification-before-completion`
-- `write-handoff`
 - `writing-plans`
 - `zoom-out`
 

@@ -1,9 +1,9 @@
 ---
-name: diagnose
-description: Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce, minimise, hypothesise, instrument, fix, and regression-test. Use when the user says "diagnose" or "debug this", reports a bug, says something is broken/throwing/failing/slow, or describes a performance regression.
+name: diagnosing-bugs
+description: Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow.
 ---
 
-# Diagnose
+# Diagnosing Bugs
 
 A discipline for hard bugs. Skip phases only when explicitly justified.
 

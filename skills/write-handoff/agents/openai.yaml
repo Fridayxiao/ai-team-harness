@@ -1,4 +1,4 @@
 interface:
   display_name: "Write Handoff"
-  short_description: "Record useful handoff context"
-  default_prompt: "Use $write-handoff to record the context another person or agent should know."
+  short_description: "Route reusable context to docs and task state to handoffs"
+  default_prompt: "Use $write-handoff to preserve reusable project knowledge in docs and task-specific context in a handoff."

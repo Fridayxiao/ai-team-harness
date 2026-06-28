@@ -1,4 +1,4 @@
 interface:
   display_name: "Clarify and Reuse"
-  short_description: "Clarify intent and avoid reinvention"
-  default_prompt: "Use $clarify-and-reuse to clarify the intent and reuse existing solutions before custom work."
+  short_description: "Clarify intent and reuse before inventing"
+  default_prompt: "Use $clarify-and-reuse to clarify the real goal and check reuse paths before custom work."
