@@ -1,0 +1,8 @@
+# OpenAI Codex agent interface metadata.
+# This file is consumed by Codex for agent discovery and display.
+# The .codex-plugin/plugin.json provides similar metadata for the Codex plugin system.
+# Other runtimes (Gemini, Claude) use different discovery mechanisms.
+interface:
+  display_name: "Delivery Loop"
+  short_description: "Keep complex goals aligned, verified, reviewed, and accepted"
+  default_prompt: "Use $delivery-loop to drive this complex goal to user acceptance without heavyweight workflow paperwork."

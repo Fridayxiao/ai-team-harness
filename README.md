@@ -6,6 +6,7 @@ Portable harness for sharing one curated skill set and one Codex sub-agent team 
 
 - `skills/`: portable copies of selected reusable skills (currently in a flat namespace).
 - `agents/`: the 8 Codex sub-agent TOML files.
+- `plugins/`: portable Codex plugins that bundle related skills and plugin metadata.
 - `docs/manifest.md`: source paths and intended use.
 - `scripts/install-global-skills.sh`: copy skills into a user-level skills directory.
 - `scripts/verify-harness.sh`: check that the expected skills and agents exist.
@@ -35,6 +36,10 @@ This harness intentionally includes only broadly reusable skills:
 - `write-handoff`
 - `writing-plans`
 - `zoom-out`
+
+## Plugins
+
+- `orchestrated-delivery`: Codex plugin containing `$delivery-loop` and `$codex-thread-manager`.
 
 ## Agent Team
 
@@ -71,6 +76,8 @@ SKILLS_HOME="$HOME/.codex/skills" ./scripts/install-global-skills.sh
 ```
 
 The script copies files rather than symlinking them, so the installed skills remain usable after moving the harness.
+
+Plugins are stored under `plugins/` as source bundles. Install or refresh them through Codex plugin tooling from the cloned path.
 
 Install script behavior:
 

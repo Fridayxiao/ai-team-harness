@@ -27,6 +27,12 @@ expected_skills=(
   "skills/write-handoff"
 )
 
+expected_plugins=(
+  "plugins/orchestrated-delivery/.codex-plugin/plugin.json"
+  "plugins/orchestrated-delivery/skills/delivery-loop/SKILL.md"
+  "plugins/orchestrated-delivery/skills/codex-thread-manager/SKILL.md"
+)
+
 expected_agents=(
   "agents/architect.toml"
   "agents/bug-reproducer.toml"
@@ -47,6 +53,13 @@ for skill in "${expected_skills[@]}"; do
   fi
 done
 
+for plugin_file in "${expected_plugins[@]}"; do
+  if [ ! -f "$HARNESS_DIR/$plugin_file" ]; then
+    printf 'missing plugin file: %s\n' "$plugin_file" >&2
+    missing=1
+  fi
+done
+
 for agent in "${expected_agents[@]}"; do
   if [ ! -f "$HARNESS_DIR/$agent" ]; then
     printf 'missing agent: %s\n' "$agent" >&2
@@ -58,4 +71,4 @@ if [ "$missing" -ne 0 ]; then
   exit 1
 fi
 
-printf 'harness ok: %s skills, %s agents\n' "${#expected_skills[@]}" "${#expected_agents[@]}"
+printf 'harness ok: %s skills, %s plugin files, %s agents\n' "${#expected_skills[@]}" "${#expected_plugins[@]}" "${#expected_agents[@]}"

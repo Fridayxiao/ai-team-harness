@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Thread Manager"
+  short_description: "Manage Codex threads autonomously"
+  default_prompt: "Use $codex-thread-manager to inspect, coordinate, and organize Codex threads for this goal."
