@@ -45,7 +45,6 @@ Date captured: 2026-06-28
 | `using-superpowers` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/using-superpowers` |
 | `verification-before-completion` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/verification-before-completion` |
 | `writing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/writing-plans` |
-| `zoom-out` | retained from harness and schema-normalized; upstream `mattpocock/skills` removed this skill |
 
 ## Personal Plugins
 

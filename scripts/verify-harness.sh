@@ -33,7 +33,6 @@ expected_skills=(
   "skills/verification-before-completion"
   "skills/write-handoff"
   "skills/writing-plans"
-  "skills/zoom-out"
 )
 
 expected_plugins=(

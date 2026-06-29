@@ -56,7 +56,6 @@ The harness also retains selected upstream or legacy skills for portability:
 - `using-superpowers`
 - `verification-before-completion`
 - `writing-plans`
-- `zoom-out`
 
 ## Plugins
 
