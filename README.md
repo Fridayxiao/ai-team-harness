@@ -20,7 +20,6 @@ The custom skill sources are local user-level directories:
 
 Current custom skills:
 
-- `automation-opportunity-review`
 - `clarify-and-reuse`
 - `codebase-design`
 - `develop-web-game`
@@ -36,6 +35,7 @@ Current custom skills:
 - `openai-docs`
 - `playwright`
 - `prototype`
+- `reuse-opportunity-review`
 - `set-goal`
 - `setup-matt-pocock-skills`
 - `tdd`

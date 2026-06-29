@@ -1,0 +1,5 @@
+# OpenAI Codex agent interface metadata.
+interface:
+  display_name: "Reuse Opportunity Review"
+  short_description: "Extract reusable lessons, patterns, fixes, workflows, and automation candidates"
+  default_prompt: "Use $reuse-opportunity-review to review completed work or an existing project for reusable knowledge and automation candidates."

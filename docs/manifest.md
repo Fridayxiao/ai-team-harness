@@ -1,12 +1,11 @@
 # Harness Manifest
 
-Date captured: 2026-06-28
+Date captured: 2026-06-29
 
 ## Custom Skills From `/Users/david/.codex/skills`
 
 | Skill | Source Path |
 |---|---|
-| `automation-opportunity-review` | `/Users/david/.codex/skills/automation-opportunity-review` |
 | `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
 | `develop-web-game` | `/Users/david/.codex/skills/develop-web-game` |
 | `frontend-design` | `/Users/david/.codex/skills/frontend-design` |
@@ -15,6 +14,7 @@ Date captured: 2026-06-28
 | `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
 | `openai-docs` | `/Users/david/.codex/skills/openai-docs` |
 | `playwright` | `/Users/david/.codex/skills/playwright` |
+| `reuse-opportunity-review` | `/Users/david/.codex/skills/reuse-opportunity-review` |
 | `set-goal` | `/Users/david/.codex/skills/set-goal` |
 | `write-handoff` | `/Users/david/.codex/skills/write-handoff` |
 
