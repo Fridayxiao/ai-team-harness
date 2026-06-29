@@ -10,7 +10,6 @@ expected_skills=(
   "skills/develop-web-game"
   "skills/diagnosing-bugs"
   "skills/domain-modeling"
-  "skills/executing-plans"
   "skills/finishing-a-development-branch"
   "skills/frontend-design"
   "skills/grill-with-docs"
@@ -32,7 +31,6 @@ expected_skills=(
   "skills/using-superpowers"
   "skills/verification-before-completion"
   "skills/write-handoff"
-  "skills/writing-plans"
 )
 
 expected_plugins=(

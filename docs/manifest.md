@@ -39,12 +39,10 @@ Date captured: 2026-06-29
 | Skill | Source Path |
 |---|---|
 | `brainstorming` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/brainstorming` |
-| `executing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/executing-plans` |
 | `finishing-a-development-branch` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/finishing-a-development-branch` |
 | `receiving-code-review` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/receiving-code-review` |
 | `using-superpowers` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/using-superpowers` |
 | `verification-before-completion` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/verification-before-completion` |
-| `writing-plans` | `/Users/david/.codex/plugins/cache/openai-curated-remote/superpowers/5.1.4/skills/writing-plans` |
 
 ## Personal Plugins
 
