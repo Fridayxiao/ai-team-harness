@@ -22,7 +22,6 @@ Current custom skills:
 
 - `clarify-and-reuse`
 - `codebase-design`
-- `develop-web-game`
 - `diagnosing-bugs`
 - `domain-modeling`
 - `frontend-design`

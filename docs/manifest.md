@@ -7,7 +7,6 @@ Date captured: 2026-06-29
 | Skill | Source Path |
 |---|---|
 | `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
-| `develop-web-game` | `/Users/david/.codex/skills/develop-web-game` |
 | `frontend-design` | `/Users/david/.codex/skills/frontend-design` |
 | `hatch-pet` | `/Users/david/.codex/skills/hatch-pet` |
 | `langchain-langgraph-docs-guide` | `/Users/david/.codex/skills/langchain-langgraph-docs-guide` |

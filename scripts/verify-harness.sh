@@ -7,7 +7,6 @@ expected_skills=(
   "skills/brainstorming"
   "skills/clarify-and-reuse"
   "skills/codebase-design"
-  "skills/develop-web-game"
   "skills/diagnosing-bugs"
   "skills/domain-modeling"
   "skills/finishing-a-development-branch"
