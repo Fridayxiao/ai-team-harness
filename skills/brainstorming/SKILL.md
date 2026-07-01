@@ -63,7 +63,7 @@ digraph brainstorming {
 }
 ```
 
-**The terminal state is a concrete implementation plan.** Do NOT invoke frontend-design, mcp-builder, or any other implementation skill until that plan is approved.
+**The terminal state is a concrete implementation plan.** Do NOT invoke any implementation skill until that plan is approved.
 
 ## The Process
 

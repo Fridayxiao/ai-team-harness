@@ -7,12 +7,7 @@ Date captured: 2026-06-29
 | Skill | Source Path |
 |---|---|
 | `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
-| `frontend-design` | `/Users/david/.codex/skills/frontend-design` |
-| `hatch-pet` | `/Users/david/.codex/skills/hatch-pet` |
-| `langchain-langgraph-docs-guide` | `/Users/david/.codex/skills/langchain-langgraph-docs-guide` |
 | `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
-| `openai-docs` | `/Users/david/.codex/skills/openai-docs` |
-| `playwright` | `/Users/david/.codex/skills/playwright` |
 | `reuse-opportunity-review` | `/Users/david/.codex/skills/reuse-opportunity-review` |
 | `set-goal` | `/Users/david/.codex/skills/set-goal` |
 | `write-handoff` | `/Users/david/.codex/skills/write-handoff` |
