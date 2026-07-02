@@ -9,7 +9,6 @@ expected_skills=(
   "skills/codebase-design"
   "skills/diagnosing-bugs"
   "skills/domain-modeling"
-  "skills/finishing-a-development-branch"
   "skills/grill-with-docs"
   "skills/grilling"
   "skills/improve-codebase-architecture"
@@ -22,7 +21,6 @@ expected_skills=(
   "skills/tdd"
   "skills/to-issues"
   "skills/to-prd"
-  "skills/using-superpowers"
   "skills/verification-before-completion"
   "skills/write-handoff"
 )
