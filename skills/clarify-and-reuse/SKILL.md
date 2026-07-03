@@ -1,6 +1,6 @@
 ---
 name: clarify-and-reuse
-description: Use when an implementation, design, debugging, integration, or refactoring task may have unclear intent, hidden constraints, or existing project, dependency, framework, platform, or current ecosystem solutions worth reusing. Clarify the real goal and prefer reuse before custom code. Do not use for tiny mechanical edits where intent and implementation path are already obvious.
+description: Use when an implementation, design, debugging, integration, feature, behavior change, or refactoring task may have unclear intent, hidden constraints, meaningful design choices, or existing project, dependency, framework, platform, current ecosystem, library, component, module, or reference-project solutions worth evaluating. Clarify the real goal, compare local and modern external approaches when the choice matters, dispatch a research sub-agent for non-trivial ecosystem research when available, and prefer the best-fitting path over custom code. Do not use for tiny mechanical edits where intent and implementation path are already obvious.
 ---
 
 # Clarify and Reuse
@@ -9,9 +9,9 @@ description: Use when an implementation, design, debugging, integration, or refa
 
 **Core principle**: Do not solve the wrong problem, and do not rebuild something the project or ecosystem already gives you.
 
-Good clarification is targeted. It asks only the questions that can change the path. Good reuse starts local, respects project vocabulary and patterns, checks installed capabilities, and researches current mainstream options before inventing custom work when local options do not fit.
+Good clarification is targeted. It asks only the questions that can change the path. Good design work explores the smallest useful set of viable approaches before committing to one. Good reuse treats local context as constraint input, not as an automatic default. It compares existing project options, installed capabilities, framework/platform features, and current ecosystem options before choosing a path.
 
-Bad clarification turns every request into an interview. Bad reuse blindly forces existing code into the wrong shape. Bad custom work starts from memory, adds parallel abstractions, or chooses a new dependency before checking what already exists.
+Bad clarification turns every request into an interview. Bad design work blocks straightforward execution behind ceremony. Bad reuse blindly forces existing code into the wrong shape. Bad custom work starts from memory, adds parallel abstractions, or chooses a new dependency before checking what already exists.
 
 ## Anti-Pattern: Custom-First Work
 
@@ -25,19 +25,53 @@ This produces bad work:
 - Fast-moving ecosystem choices are made from stale memory
 - One-off needs become broad infrastructure
 
-**Correct approach**: clarify only the ambiguity that matters, then climb the reuse ladder until a suitable path appears.
+**Correct approach**: clarify only the ambiguity that matters, inspect the local constraints, research the ecosystem when the decision is non-trivial, then choose the best-fitting path.
 
-## Reuse Ladder
+## Lightweight Design Check
 
-The reuse ladder is the preferred search order for a solution. It is not bureaucracy. Stop when a level gives you a suitable path.
+For non-trivial features, behavior changes, product decisions, or architecture work, do a compact design check before implementation:
 
-1. Existing project code, docs, tests, conventions, utilities, components, services, schemas, commands, or prior patterns
-2. Installed dependencies or existing configuration
-3. Framework, platform, runtime, or standard library features
-4. Current mainstream external libraries, tools, services, or documented ecosystem patterns
-5. Focused custom implementation
+- Understand the purpose, constraints, success condition, and user-visible outcome.
+- Read enough project context to avoid proposing changes that fight the existing system.
+- Ask one focused question at a time when an answer would materially change the path. If the answer would not change the path, state the assumption and proceed.
+- If there are multiple viable approaches, present 2-3 options with trade-offs and a recommended default.
+- Split oversized requests into smaller deliverable pieces before trying to design every detail.
+- Prefer simple, isolated modules with clear responsibilities and interfaces when new structure is needed.
+- Include targeted cleanup only when it directly supports the requested work.
 
-If the local project and installed dependencies do not fit, investigate the current ecosystem before inventing. Check official docs or primary sources when APIs, package choices, framework guidance, product behavior, deprecations, or best practices may have changed.
+This is not a hard gate. Do not force a design document, commit, staged approval loop, or separate planning skill unless the user asks for that workflow or the task genuinely needs it. Keep the design check proportional: a sentence is enough for small work, while larger changes may need a short plan.
+
+## Option Scan
+
+Do not treat local code as the default answer. Use local inspection to understand constraints, then compare local and external options on fit.
+
+Evaluate whichever of these are relevant:
+
+- Existing project code, docs, tests, conventions, utilities, components, services, schemas, commands, or prior patterns
+- Installed dependencies or existing configuration
+- Framework, platform, runtime, or standard library features
+- Current mainstream external libraries, tools, services, components, templates, starter kits, or documented ecosystem patterns
+- Mature open-source projects or reference implementations that reveal good module boundaries, integration patterns, or UX behavior
+- Focused custom implementation
+
+Research the current ecosystem proactively when the decision affects maintainability, user-facing behavior, security, performance, architecture, or dependency choice. This is especially important for fast-moving APIs, UI components, editors, tables, charts, auth, payments, parsing, workflow engines, AI SDKs, browser automation, Cloudflare, Supabase, or other platform integrations.
+
+Use official docs, primary sources, package docs, release notes, maintenance signals, and credible reference projects. Compare maintenance, API stability, compatibility, adoption, licensing, bundle/runtime cost, security posture, integration effort, and fit to the project's constraints.
+
+## Research Sub-agent
+
+For non-trivial ecosystem research, dispatch a research sub-agent when subagents are available and permitted by the current environment. Keep local code exploration in the main thread unless it can be cleanly separated.
+
+Give the research sub-agent a self-contained read-only brief:
+
+- The real goal and success condition
+- Relevant framework/runtime/package versions and constraints found locally
+- The decision to research, such as library choice, component strategy, API shape, or reference-project pattern
+- Required sources, preferring official docs, primary repositories, release notes, and mature examples
+- Comparison criteria: fit, maintenance, compatibility, licensing, integration cost, risk, and migration path
+- Expected deliverable: 2-4 viable options, a recommended default, trade-offs, and links or source names
+
+Do not outsource the final decision. Use the sub-agent's research as input, then synthesize it with local constraints and own the recommendation.
 
 ## Workflow
 
@@ -49,13 +83,13 @@ Identify the real goal, success condition, constraints, and the ambiguity that c
 
 Read the relevant project context before designing: docs, code, tests, package manifests, commands, conventions, helpers, components, services, schemas, and nearby patterns.
 
-### 3. Check The Reuse Ladder
+### 3. Scan Local And Ecosystem Options
 
-Prefer adapting an existing primitive over adding a parallel one. Prefer installed, platform, or framework capabilities over adding a new dependency. Add a dependency only when it is clearly better than local or platform code for this task.
+Prefer a proven, well-fitting option over a familiar local one. Adapt an existing local primitive when it is genuinely a good fit. Prefer installed, platform, or framework capabilities when they meet the need cleanly. Research current ecosystem options when the choice matters or facts may be stale. Add a dependency only when it is clearly better than local, installed, framework, platform, or focused custom code for this task.
 
-### 4. Research When Local Options Do Not Fit
+### 4. Dispatch Research When It Matters
 
-When no local, installed, framework, platform, or standard-library option fits, research the current mainstream path before custom work. Consider maintenance, compatibility, adoption, licensing, deprecation or migration notes, and fit to the project's constraints.
+When ecosystem fit is material, dispatch a research sub-agent when available and permitted. If subagents are unavailable or not permitted, do the research directly. Do not rely on memory for APIs, package choices, framework guidance, product behavior, deprecations, or best practices that may have changed.
 
 ### 5. Choose The Best-Fitting Path
 
@@ -63,13 +97,18 @@ Pick the path that fits the goal, project shape, maintenance burden, and reversi
 
 Keep the chosen path narrow at first. Expand an abstraction only when a second real use makes the shape clearer.
 
+### 6. Implement Without Ceremony
+
+Once the path is clear enough, proceed. Do not keep interviewing the user, write a spec, or wait for approval unless the remaining uncertainty can change the solution or the user explicitly asked for a design-review workflow.
+
 ## What To Say
 
 Before committing to the path, briefly say what mattered:
 
 - "The project already has a helper for this, so I will extend it."
 - "The installed dependency already covers this; no new package is needed."
-- "There is no suitable local or installed option, so I checked the current ecosystem before choosing this library."
+- "This decision depends on current ecosystem options, so I dispatched research and compared it with the local constraints."
+- "A modern library fits better than the existing local helper because it reduces long-term maintenance and matches the platform guidance."
 - "The mainstream options are too heavy for this case, so a small custom implementation is clearer than adding a dependency."
 - "There are two viable paths; here is the tradeoff and my recommended default."
 
@@ -80,8 +119,10 @@ Keep the report proportional. For small tasks, one sentence is enough.
 ```text
 [ ] Real goal and success condition are clear enough
 [ ] Local docs, code, tests, packages, and patterns were checked when relevant
-[ ] Installed, framework, platform, or standard-library options were considered before new dependencies
-[ ] Current ecosystem was researched when local options did not fit or facts may be stale
+[ ] Meaningful design or architecture choices were compared when they affect the path
+[ ] Installed, framework, platform, or standard-library options were considered
+[ ] Current ecosystem options were researched when the choice is non-trivial or facts may be stale
+[ ] Research sub-agent was dispatched for non-trivial ecosystem research when available and permitted
 [ ] Chosen path fits the goal, project shape, maintenance burden, and reversibility
 [ ] Custom code or new dependencies have a concrete reason
 ```

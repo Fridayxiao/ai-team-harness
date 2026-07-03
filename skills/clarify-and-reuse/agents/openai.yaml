@@ -1,4 +1,4 @@
 interface:
   display_name: "Clarify and Reuse"
-  short_description: "Clarify intent and reuse before inventing"
-  default_prompt: "Use $clarify-and-reuse to clarify the real goal and check reuse paths before custom work."
+  short_description: "Clarify intent and compare local plus ecosystem options"
+  default_prompt: "Use $clarify-and-reuse to clarify the real goal, compare local and modern ecosystem options, and choose the best-fitting path before custom work."

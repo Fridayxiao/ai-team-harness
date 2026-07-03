@@ -43,7 +43,6 @@ Cloudflare-published skills that may exist under `~/.codex/skills` are intention
 
 The harness also retains selected upstream or legacy skills for portability:
 
-- `brainstorming`
 - `receiving-code-review`
 - `verification-before-completion`
 

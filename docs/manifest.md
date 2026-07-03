@@ -1,6 +1,6 @@
 # Harness Manifest
 
-Date captured: 2026-06-29
+Date captured: 2026-07-03
 
 ## Custom Skills From `/Users/david/.codex/skills`
 
@@ -32,7 +32,6 @@ Date captured: 2026-06-29
 
 | Skill | Source Path |
 |---|---|
-| `brainstorming` | `/Users/david/.codex/plugins/cache/openai-curated/superpowers/3fdeeb49/skills/brainstorming` |
 | `receiving-code-review` | `/Users/david/.codex/plugins/cache/openai-curated/superpowers/3fdeeb49/skills/receiving-code-review` |
 | `verification-before-completion` | `/Users/david/.codex/plugins/cache/openai-curated/superpowers/3fdeeb49/skills/verification-before-completion` |
 
