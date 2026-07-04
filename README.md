@@ -26,6 +26,7 @@ Current custom skills:
 - `domain-modeling`
 - `grill-with-docs`
 - `grilling`
+- `idea2implement`
 - `improve-codebase-architecture`
 - `musk-5-step`
 - `prototype`

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idea2Implement"
+  short_description: "Turn a raw idea into an implementation-ready plan"
+  default_prompt: "Use $idea2implement to align this idea into an implementation-ready plan."

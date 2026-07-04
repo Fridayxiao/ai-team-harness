@@ -10,6 +10,7 @@ expected_skills=(
   "skills/domain-modeling"
   "skills/grill-with-docs"
   "skills/grilling"
+  "skills/idea2implement"
   "skills/improve-codebase-architecture"
   "skills/musk-5-step"
   "skills/prototype"

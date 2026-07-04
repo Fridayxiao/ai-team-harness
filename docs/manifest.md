@@ -7,6 +7,7 @@ Date captured: 2026-07-04
 | Skill | Source Path |
 |---|---|
 | `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
+| `idea2implement` | `/Users/david/.codex/skills/idea2implement` |
 | `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
 | `reuse-opportunity-review` | `/Users/david/.codex/skills/reuse-opportunity-review` |
 | `set-goal` | `/Users/david/.codex/skills/set-goal` |
