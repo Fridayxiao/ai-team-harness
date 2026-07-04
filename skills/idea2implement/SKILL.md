@@ -1,6 +1,6 @@
 ---
 name: idea2implement
-description: Use when the user wants to turn a raw product idea, vague product direction, feature concept, or early project discussion into an implementation-ready plan. Orchestrates product definition, scope control, domain language, architecture design, technical research, ADRs, PRD synthesis, TODO planning, issue slicing, verification gates, and handoff. Do not use for small coding tasks, narrow bug fixes, or already-scoped implementation work unless the user explicitly wants product-to-implementation alignment.
+description: "Use to turn a raw idea into an implementation-ready plan: scope, architecture/tech, PRD/TODO/issues, and handoff."
 ---
 
 # Idea2Implement
