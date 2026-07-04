@@ -1,6 +1,6 @@
 # Harness Manifest
 
-Date captured: 2026-07-03
+Date captured: 2026-07-04
 
 ## Custom Skills From `/Users/david/.codex/skills`
 
@@ -39,7 +39,7 @@ Date captured: 2026-07-03
 
 | Plugin | Source Path |
 |---|---|
-| `orchestrated-delivery` | `/Users/david/.codex/plugins/cache/personal/orchestrated-delivery/0.4.0` |
+| `orchestrated-delivery` | `/Users/david/plugins/orchestrated-delivery` |
 
 ## Agents
 

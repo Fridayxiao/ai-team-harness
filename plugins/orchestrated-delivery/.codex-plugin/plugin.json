@@ -1,15 +1,15 @@
 {
   "name": "orchestrated-delivery",
-  "version": "0.4.0",
-  "description": "Lightweight delivery loop and Codex thread management for complex goals and user acceptance.",
+  "version": "0.4.1",
+  "description": "Delivery Loop for scoped execution, verification/testing, review, handoff, and user acceptance.",
   "author": {
     "name": "Local developer"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Delivery Loop",
-    "shortDescription": "Keep complex goals aligned, verified, reviewed, and accepted.",
-    "longDescription": "A lightweight delivery-loop and thread-management plugin for keeping complex goals aligned, scoped, researched, planned, executed in reviewable slices, verified, reviewed, and brought to user acceptance without unnecessary workflow paperwork.",
+    "shortDescription": "Run complex goals through acceptance, tests, review, and handoff.",
+    "longDescription": "Keeps complex goals scoped, sliced, tested, reviewed, and mapped to user acceptance. Includes optional Codex thread coordination for user-visible lanes or isolated work.",
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [
@@ -19,7 +19,7 @@
     ],
     "defaultPrompt": [
       "Use $delivery-loop for this complex goal.",
-      "Drive this goal through alignment, approach, acceptance, execution, verification, review, and user acceptance.",
+      "Drive this goal through alignment, acceptance, execution slices, verification/testing, review, handoff when needed, and user acceptance.",
       "Use $grill-with-docs when the goal, design, domain language, or tradeoffs need sharper questioning.",
       "Use $codex-thread-manager to inspect, coordinate, and organize Codex threads for this goal."
     ]

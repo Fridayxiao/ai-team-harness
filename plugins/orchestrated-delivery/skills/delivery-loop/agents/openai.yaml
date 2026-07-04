@@ -4,5 +4,5 @@
 # Other runtimes (Gemini, Claude) use different discovery mechanisms.
 interface:
   display_name: "Delivery Loop"
-  short_description: "Keep complex goals aligned, verified, reviewed, and accepted"
-  default_prompt: "Use $delivery-loop to drive this complex goal to user acceptance without heavyweight workflow paperwork."
+  short_description: "Run complex goals through acceptance, tests, review, and handoff"
+  default_prompt: "Use $delivery-loop to align this goal, define acceptance and verification/tests, execute in reviewable slices, verify, review, and report the user acceptance path."

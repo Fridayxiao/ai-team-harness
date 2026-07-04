@@ -1,32 +1,39 @@
 ---
 name: delivery-loop
-description: Lightweight delivery loop for complex goals. Use when a goal needs alignment, scope, approach, acceptance, execution planning, verification, review, and user acceptance without heavyweight workflow paperwork. Use with grill-with-docs when the goal, design, domain language, or tradeoffs need deeper questioning. Do not use for simple tasks.
+description: Use for Delivery Loop, delivery-loop, or orchestrated-delivery requests, or complex goals needing scope, verification/testing, review, handoff, thread coordination, or user acceptance. Pair with $grill-with-docs for unclear design, domain language, or tradeoffs. Skip tiny mechanical edits unless requested.
 ---
 
 # Delivery Loop
 
-## Philosophy
+## Core Principle
 
-**Core principle**: Drive complex work to user acceptance, not to workflow completion.
+Drive complex work to user acceptance.
 
-Good delivery loops keep goal, scope, approach, acceptance, execution, verification, review, and outcome connected. Records exist to preserve decisions and evidence, not to satisfy a process.
+Keep goal, scope, approach, acceptance, execution, verification, review, and outcome connected. Records preserve decisions, evidence, and handoff context so the next person can understand what was decided, what changed, what was verified, and what still needs judgment.
 
-Bad delivery loops create paperwork, rush into implementation before acceptance is clear, or treat "tests passed" as delivery when the user still cannot judge the outcome.
+Do not rush into implementation before acceptance is clear. Do not treat "tests passed" as delivery when the user still cannot judge the outcome.
 
 Use `$grill-with-docs` when the goal, design, domain language, or tradeoffs need sharper questioning. Let it update `CONTEXT.md` and ADRs when useful. Delivery Loop still owns the current goal, acceptance, execution, verification, review, and outcome.
 
-## Anti-Pattern: Workflow Paperwork
+## Required Start
 
-**DO NOT create documents just because the loop has steps.**
+Whenever this skill is used, start by saying Delivery Loop is active and choose the operating mode. If the task is small but the user explicitly requested Delivery Loop, use Lite mode instead of declining the skill.
 
-This produces bad delivery:
+Choose the operating mode:
 
-- The agent optimizes for filling templates instead of understanding the goal
-- Existing README, CONTEXT.md, ADRs, issues, and plans get duplicated
-- The user is asked to approve process artifacts instead of meaningful decisions
-- Execution drifts because acceptance was written as ceremony, not as a testable target
+- **Lite**: goal, acceptance, verification, and final acceptance path for a bounded task.
+- **Standard**: alignment, approach, acceptance, sliced execution, verification, review, and final report for a complex local task.
+- **Threaded**: Standard plus `$codex-thread-manager` for user-visible Codex thread coordination, existing thread continuation, independent worktrees, long-running lanes, or risk isolation.
+- **Documented**: Standard plus explicit project documents when the user asks for durable workflow records or the task produces reusable project knowledge.
 
-**Correct approach**: keep the smallest useful record. If existing docs carry the context, reference them. If something important would be lost after the session, record it where it belongs.
+Before implementation, define:
+
+- goal, scope, non-goals, expected output, and constraints
+- open questions whose answers would change the work
+- acceptance criteria and verification/test plan
+- review expectations and residual risks worth reporting
+
+Ask targeted questions only when the answer changes the work. Otherwise state assumptions and proceed.
 
 ## Workflow
 
@@ -51,30 +58,35 @@ Record durable project knowledge in the project's normal docs. Record goal-speci
 Before execution, know how the result will be judged:
 
 - user-visible outcome or final deliverable
-- validation method
+- acceptance criteria
+- verification/test plan: relevant commands, manual checks, evidence to capture, and known gaps
 - unacceptable outcomes
 - review expectations
 - residual risks worth reporting
+
+Choose checks that match the risk: unit, integration, end-to-end, typecheck, lint, build, browser/API smoke test, artifact inspection, or manual verification. If no meaningful automated test exists, say why and use the strongest manual check available.
 
 Do not create or adopt a persistent runtime goal until goal, approach, and acceptance are clear and the user explicitly agrees.
 
 ### 5. Deliver In Slices
 
-Work in reviewable slices. For each slice, choose the next move, execute, verify, and review when needed.
+Work in reviewable slices. For each slice, choose the next move, execute, run the relevant check when feasible, and review when needed. Fix failing checks before moving on, or record the failure, reason, and residual risk when the task must stop or proceed.
 
-Delegate only when it improves coverage, isolation, speed, or judgment. Treat delegate output as advisory until you check it. Use `$codex-thread-manager` for user-visible Codex thread coordination; use ordinary subagents for internal parallel work.
+Delegate when it improves coverage, isolation, speed, or judgment. Treat delegate output as advisory until you check it. If user or repo instructions require subagent review, handoff documentation, or specific verification, those stricter instructions apply.
+
+Use `$codex-thread-manager` when the work involves user-visible Codex threads: continuing existing threads, coordinating multiple thread lanes, creating or briefing independent worktrees, collecting thread results, handing off work, archiving completed threads, or isolating long-running or risky execution. Use ordinary subagents for internal parallel work that does not need user-visible thread state.
 
 ### 6. Close The Loop
 
-Report what changed, how it was verified, what was reviewed, what remains risky or unverified, and how the user can accept the result. Update durable docs when the work produced reusable project knowledge.
+Report what changed, exact verification commands or manual checks and results, what was reviewed, what remains risky or unverified, and how the user can accept the result. Do not replace evidence with a generic "verified" claim. Update durable docs when the work produced reusable project knowledge or when future work would lose important decisions without a written record.
 
 ## Records
 
-Prefer the smallest useful record.
+Keep records tied to decisions, evidence, review, and handoff.
 
-If existing docs already carry the context, reference them. If the information belongs to the project long-term, put it in project docs. If it belongs only to the current goal, keep it in a lightweight delivery note, issue comment, PR note, execution log, or final report.
+Create or update durable records when the work spans multiple sessions, changes architecture or domain language, uses subagents or Codex threads, leaves residual risk, depends on acceptance evidence, or creates reusable project knowledge.
 
-Do not duplicate project docs into delivery notes. Do not leave important decisions, validation evidence, review outcomes, or acceptance steps only in memory.
+Use the project's normal docs for long-lived knowledge. Use a delivery note, issue comment, PR note, execution log, or final report for goal-specific decisions and evidence. Do not duplicate project docs into delivery notes. Do not leave important decisions, validation evidence, review outcomes, or acceptance steps only in memory.
 
 ## Checklist Per Loop
 
@@ -82,8 +94,9 @@ Do not duplicate project docs into delivery notes. Do not leave important decisi
 [ ] Goal, scope, non-goals, and expected output are clear
 [ ] Existing docs were reused instead of duplicated
 [ ] Approach was researched enough for the risk level
-[ ] Acceptance and validation are known before execution
+[ ] Acceptance and verification/test plan are known before execution
 [ ] Work was delivered in reviewable slices
+[ ] Relevant checks were run, or explicit gaps and residual risks were captured
 [ ] Verification and review evidence are captured
 [ ] Durable knowledge went into project docs, not temporary notes
 [ ] Final outcome is mapped to user acceptance
