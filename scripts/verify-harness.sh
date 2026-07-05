@@ -6,6 +6,7 @@ HARNESS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 expected_skills=(
   "skills/clarify-and-reuse"
   "skills/codebase-design"
+  "skills/delivery-loop"
   "skills/diagnosing-bugs"
   "skills/domain-modeling"
   "skills/grill-with-docs"

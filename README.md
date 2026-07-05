@@ -13,15 +13,15 @@ Portable harness for sharing David's custom skills, selected retained upstream s
 
 ## Custom Skills
 
-The custom skill sources are local user-level directories:
+The custom skill source is the local user-level directory:
 
-- `/Users/david/.codex/skills`
 - `/Users/david/.agents/skills`
 
 Current custom skills:
 
 - `clarify-and-reuse`
 - `codebase-design`
+- `delivery-loop`
 - `diagnosing-bugs`
 - `domain-modeling`
 - `grill-with-docs`
@@ -44,6 +44,7 @@ Cloudflare-published skills that may exist under `~/.codex/skills` are intention
 
 The harness also retains selected upstream or legacy skills for portability:
 
+- `delivery-loop`
 - `receiving-code-review`
 - `verification-before-completion`
 

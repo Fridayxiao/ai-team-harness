@@ -1,38 +1,34 @@
 # Harness Manifest
 
-Date captured: 2026-07-04
-
-## Custom Skills From `/Users/david/.codex/skills`
-
-| Skill | Source Path |
-|---|---|
-| `clarify-and-reuse` | `/Users/david/.codex/skills/clarify-and-reuse` |
-| `idea2implement` | `/Users/david/.codex/skills/idea2implement` |
-| `musk-5-step` | `/Users/david/.codex/skills/musk-5-step` |
-| `reuse-opportunity-review` | `/Users/david/.codex/skills/reuse-opportunity-review` |
-| `set-goal` | `/Users/david/.codex/skills/set-goal` |
-| `write-handoff` | `/Users/david/.codex/skills/write-handoff` |
+Date captured: 2026-07-05
 
 ## Custom Skills From `/Users/david/.agents/skills`
 
 | Skill | Source Path |
 |---|---|
+| `clarify-and-reuse` | `/Users/david/.agents/skills/clarify-and-reuse` |
 | `codebase-design` | `/Users/david/.agents/skills/codebase-design` |
 | `diagnosing-bugs` | `/Users/david/.agents/skills/diagnosing-bugs` |
 | `domain-modeling` | `/Users/david/.agents/skills/domain-modeling` |
 | `grill-with-docs` | `/Users/david/.agents/skills/grill-with-docs` |
 | `grilling` | `/Users/david/.agents/skills/grilling` |
+| `idea2implement` | `/Users/david/.agents/skills/idea2implement` |
 | `improve-codebase-architecture` | `/Users/david/.agents/skills/improve-codebase-architecture` |
+| `musk-5-step` | `/Users/david/.agents/skills/musk-5-step` |
 | `prototype` | `/Users/david/.agents/skills/prototype` |
+| `reuse-opportunity-review` | `/Users/david/.agents/skills/reuse-opportunity-review` |
+| `set-goal` | `/Users/david/.agents/skills/set-goal` |
 | `setup-matt-pocock-skills` | `/Users/david/.agents/skills/setup-matt-pocock-skills` |
 | `tdd` | `/Users/david/.agents/skills/tdd` |
 | `to-issues` | `/Users/david/.agents/skills/to-issues` |
 | `to-prd` | `/Users/david/.agents/skills/to-prd` |
+| `write-handoff` | `/Users/david/.agents/skills/write-handoff` |
 
 ## Retained Upstream And Legacy Skills
 
 | Skill | Source Path |
 |---|---|
+| `delivery-loop` | `ai-team-harness/plugins/orchestrated-delivery/skills/delivery-loop` |
 | `receiving-code-review` | `/Users/david/.codex/plugins/cache/openai-curated/superpowers/3fdeeb49/skills/receiving-code-review` |
 | `verification-before-completion` | `/Users/david/.codex/plugins/cache/openai-curated/superpowers/3fdeeb49/skills/verification-before-completion` |
 
