@@ -1,27 +1,33 @@
 # Harness Manifest
 
-Date captured: 2026-07-05
+Date captured: 2026-07-06
 
 ## Custom Skills From `/Users/david/.agents/skills`
 
 | Skill | Source Path |
 |---|---|
+| `animation-vocabulary` | `/Users/david/.agents/skills/animation-vocabulary` |
 | `clarify-and-reuse` | `/Users/david/.agents/skills/clarify-and-reuse` |
 | `codebase-design` | `/Users/david/.agents/skills/codebase-design` |
+| `design-taste-frontend` | `/Users/david/.agents/skills/design-taste-frontend` |
 | `diagnosing-bugs` | `/Users/david/.agents/skills/diagnosing-bugs` |
 | `domain-modeling` | `/Users/david/.agents/skills/domain-modeling` |
+| `emil-design-eng` | `/Users/david/.agents/skills/emil-design-eng` |
 | `grill-with-docs` | `/Users/david/.agents/skills/grill-with-docs` |
 | `grilling` | `/Users/david/.agents/skills/grilling` |
 | `idea2implement` | `/Users/david/.agents/skills/idea2implement` |
 | `improve-codebase-architecture` | `/Users/david/.agents/skills/improve-codebase-architecture` |
 | `musk-5-step` | `/Users/david/.agents/skills/musk-5-step` |
 | `prototype` | `/Users/david/.agents/skills/prototype` |
+| `redesign-existing-projects` | `/Users/david/.agents/skills/redesign-existing-projects` |
 | `reuse-opportunity-review` | `/Users/david/.agents/skills/reuse-opportunity-review` |
+| `review-animations` | `/Users/david/.agents/skills/review-animations` |
 | `set-goal` | `/Users/david/.agents/skills/set-goal` |
 | `setup-matt-pocock-skills` | `/Users/david/.agents/skills/setup-matt-pocock-skills` |
 | `tdd` | `/Users/david/.agents/skills/tdd` |
 | `to-issues` | `/Users/david/.agents/skills/to-issues` |
 | `to-prd` | `/Users/david/.agents/skills/to-prd` |
+| `web-design-guidelines` | `/Users/david/.agents/skills/web-design-guidelines` |
 | `write-handoff` | `/Users/david/.agents/skills/write-handoff` |
 
 ## Retained Upstream And Legacy Skills

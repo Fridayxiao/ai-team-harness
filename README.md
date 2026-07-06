@@ -19,23 +19,31 @@ The custom skill source is the local user-level directory:
 
 Current custom skills:
 
+- `animation-vocabulary`
 - `clarify-and-reuse`
 - `codebase-design`
 - `delivery-loop`
+- `design-taste-frontend`
 - `diagnosing-bugs`
 - `domain-modeling`
+- `emil-design-eng`
 - `grill-with-docs`
 - `grilling`
 - `idea2implement`
 - `improve-codebase-architecture`
 - `musk-5-step`
 - `prototype`
+- `receiving-code-review`
+- `redesign-existing-projects`
 - `reuse-opportunity-review`
+- `review-animations`
 - `set-goal`
 - `setup-matt-pocock-skills`
 - `tdd`
 - `to-issues`
 - `to-prd`
+- `verification-before-completion`
+- `web-design-guidelines`
 - `write-handoff`
 
 Cloudflare-published skills that may exist under `~/.codex/skills` are intentionally excluded from this harness.

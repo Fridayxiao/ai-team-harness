@@ -4,11 +4,14 @@ set -euo pipefail
 HARNESS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 expected_skills=(
+  "skills/animation-vocabulary"
   "skills/clarify-and-reuse"
   "skills/codebase-design"
   "skills/delivery-loop"
+  "skills/design-taste-frontend"
   "skills/diagnosing-bugs"
   "skills/domain-modeling"
+  "skills/emil-design-eng"
   "skills/grill-with-docs"
   "skills/grilling"
   "skills/idea2implement"
@@ -16,13 +19,16 @@ expected_skills=(
   "skills/musk-5-step"
   "skills/prototype"
   "skills/receiving-code-review"
+  "skills/redesign-existing-projects"
   "skills/reuse-opportunity-review"
+  "skills/review-animations"
   "skills/set-goal"
   "skills/setup-matt-pocock-skills"
   "skills/tdd"
   "skills/to-issues"
   "skills/to-prd"
   "skills/verification-before-completion"
+  "skills/web-design-guidelines"
   "skills/write-handoff"
 )
 
