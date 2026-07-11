@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review standards and spec fidelity separately"
+  default_prompt: "Use $code-review to review this branch against its standards and originating spec."

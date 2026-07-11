@@ -1,6 +1,6 @@
 ---
 name: idea2implement
-description: "Use to turn a raw idea into an implementation-ready plan: scope, architecture/tech, PRD/TODO/issues, and handoff."
+description: "Use to turn a raw idea into an implementation-ready plan: scope, architecture/tech, spec/TODO/tickets, and handoff."
 ---
 
 # Idea2Implement
@@ -24,8 +24,8 @@ Use available skills as needed:
 - `grill-with-docs`: stress-test product definition, plan, domain language, and tradeoffs while updating glossary and ADR docs. This already runs `domain-modeling`.
 - `codebase-design`: design Modules, Interfaces, Seams, Adapters, and test surfaces.
 - `write-handoff`: record reusable project knowledge in README, AGENTS, docs, ADRs, runbooks, or plans.
-- `to-prd`: synthesize already-aligned discussion into a PRD when issue tracker publishing is desired.
-- `to-issues`: split an approved PRD/spec/plan into vertical-slice issues.
+- `to-spec`: synthesize already-aligned discussion into a spec when issue tracker publishing is desired.
+- `to-tickets`: split an approved spec or plan into vertical-slice tickets with explicit blocking edges.
 - `reuse-opportunity-review`: after the process, extract reusable lessons or skill improvements.
 
 If a listed skill is unavailable, continue with the same responsibility manually and say what is missing.
@@ -133,13 +133,13 @@ Keep reusable research in `docs/research`, significant decisions in `docs/adr`, 
 
 Do not leave important decisions only in chat history.
 
-### 6. Synthesize PRD When Useful
+### 6. Synthesize A Spec When Useful
 
-Use `to-prd` only after product definition and major implementation decisions are already aligned.
+Use `to-spec` only after product definition and major implementation decisions are already aligned.
 
-Do not use `to-prd` as an interview tool. It synthesizes existing context.
+Do not use `to-spec` as an interview tool. It synthesizes existing context.
 
-Before publishing a PRD, confirm the test seams and user-facing outcomes are correct.
+Before publishing a spec, confirm the test seams and user-facing outcomes are correct.
 
 ### 7. Create Implementation TODO Plan
 
@@ -156,11 +156,11 @@ The plan should include:
 
 Prefer implementation slices that are independently verifiable. Avoid pure horizontal slices unless they are necessary prefactoring.
 
-### 8. Split Issues When Ready
+### 8. Split Tickets When Ready
 
-Use `to-issues` after the PRD/spec/plan is approved.
+Use `to-tickets` after the spec or plan is approved.
 
-Issues should be tracer-bullet vertical slices:
+Tickets should be tracer-bullet vertical slices:
 
 - schema/data
 - command or backend behavior
@@ -169,9 +169,9 @@ Issues should be tracer-bullet vertical slices:
 - tests
 - acceptance criteria
 
-Each issue should be demoable or independently verifiable.
+Each ticket should be demoable or independently verifiable and sized for one fresh context window.
 
-Do not publish issues before the user approves the slice breakdown.
+Do not publish tickets before the user approves the slice breakdown and blocking edges.
 
 ### 9. Readiness Review
 
@@ -201,7 +201,7 @@ For alignment work, prefer these artifacts:
 - coverage matrix
 - README / handoff entrypoint
 - implementation TODO plan
-- vertical-slice issue breakdown
+- vertical-slice ticket breakdown
 
 Use only the artifacts the situation warrants. Do not create documents for ceremony.
 

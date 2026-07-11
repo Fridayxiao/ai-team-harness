@@ -1,60 +1,59 @@
 # AI Team Harness
 
-Portable harness for sharing David's custom skills, selected retained upstream skills, and one Codex sub-agent team across machines, projects, and agent environments.
+Portable harness for sharing David's custom skills, selected and adapted upstream skills, Codex plugins, and one Codex sub-agent team across machines and projects.
 
 ## Contents
 
-- `skills/`: portable copies of custom and retained skills (currently in a flat namespace).
+- `skills/`: portable skill copies in a flat namespace.
 - `agents/`: the 8 Codex sub-agent TOML files.
-- `plugins/`: portable Codex plugins that bundle related skills and plugin metadata.
-- `docs/manifest.md`: source paths and intended use.
+- `plugins/`: portable Codex plugins that bundle related skills and metadata.
+- `docs/manifest.md`: exact source lineage, upstream snapshot, and adaptation notes.
+- `licenses/`: third-party license notices for adapted skill sources.
 - `scripts/install-global-skills.sh`: copy skills into a user-level skills directory.
-- `scripts/verify-harness.sh`: check that the expected skills and agents exist.
+- `scripts/verify-harness.sh`: check that the expected skills, plugins, and agents exist.
 
-## Custom Skills
+## Skill Catalog
 
-The custom skill source is the local user-level directory:
-
-- `/Users/david/.agents/skills`
-
-Current custom skills:
+### Local and retained skills
 
 - `animation-vocabulary`
 - `clarify-and-reuse`
-- `codebase-design`
 - `delivery-loop`
 - `design-taste-frontend`
-- `diagnosing-bugs`
-- `domain-modeling`
 - `emil-design-eng`
-- `grill-with-docs`
-- `grilling`
 - `idea2implement`
-- `improve-codebase-architecture`
 - `musk-5-step`
-- `prototype`
 - `receiving-code-review`
 - `redesign-existing-projects`
 - `reuse-opportunity-review`
 - `review-animations`
 - `set-goal`
-- `setup-matt-pocock-skills`
-- `tdd`
-- `to-issues`
-- `to-prd`
 - `verification-before-completion`
 - `web-design-guidelines`
 - `write-handoff`
 
-Cloudflare-published skills that may exist under `~/.codex/skills` are intentionally excluded from this harness.
+### Matt Pocock adaptations
 
-## Retained Skills
+The following skills are reconciled with [`mattpocock/skills` v1.1.0](https://github.com/mattpocock/skills/releases/tag/v1.1.0) at commit `d574778f94cf620fcc8ce741584093bc650a61d3`:
 
-The harness also retains selected upstream or legacy skills for portability:
+- `code-review`
+- `codebase-design`
+- `diagnosing-bugs`
+- `domain-modeling`
+- `grill-with-docs`
+- `grilling`
+- `improve-codebase-architecture`
+- `prototype`
+- `setup-matt-pocock-skills`
+- `tdd`
+- `to-spec`
+- `to-tickets`
 
-- `delivery-loop`
-- `receiving-code-review`
-- `verification-before-completion`
+These are semantic adaptations, not a whole-repository mirror. They preserve Codex conventions such as `$skill-name`, `agents/openai.yaml`, local sub-agent review rules, and `$delivery-loop`. The deprecated local names `to-prd` and `to-issues` were removed instead of retained as aliases so invocation remains unambiguous.
+
+See [docs/manifest.md](docs/manifest.md) for per-skill provenance and [the MIT notice](licenses/mattpocock-skills-MIT.txt) for licensing.
+
+Cloudflare-published skills that may exist under `~/.codex/skills` are intentionally excluded.
 
 ## Plugins
 
@@ -82,24 +81,18 @@ From this directory:
 ./scripts/install-global-skills.sh
 ```
 
-By default, the install script copies all skills to:
+By default, the install script copies every skill to:
 
 ```text
 ~/.agents/skills
 ```
 
-Override the target:
+Override the target when needed:
 
 ```bash
 SKILLS_HOME="$HOME/.codex/skills" ./scripts/install-global-skills.sh
 ```
 
-The script copies files rather than symlinking them, so the installed skills remain usable after moving the harness.
+The installer copies files rather than creating symlinks, so installed skills keep working if the harness moves. It replaces an existing target skill with the current harness copy and skips directories without a `SKILL.md`.
 
-Plugins are stored under `plugins/` as source bundles. Install or refresh them through Codex plugin tooling from the cloned path.
-
-Install script behavior:
-
-- Skips entries in `skills/` that are not actual skill directories (must contain `SKILL.md`).
-- Replaces any existing target directory with the freshly copied one.
-- Prints an `installed N skills...` summary after completion.
+Plugins remain source bundles under `plugins/`; install or refresh them through Codex plugin tooling from the cloned path.
