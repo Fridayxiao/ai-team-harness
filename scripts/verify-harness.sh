@@ -35,15 +35,26 @@ expected_skills=(
 
 expected_docs=(
   "README.md"
+  "docs/evals/idea2implement.md"
+  "docs/evals/fixtures/idea2implement-approved-spec.md"
+  "docs/evals/fixtures/idea2implement-passkey-context.md"
   "docs/manifest.md"
   "licenses/mattpocock-skills-MIT.txt"
 )
 
 expected_skill_metadata=(
   "skills/code-review/agents/openai.yaml"
+  "skills/grill-with-docs/agents/openai.yaml"
+  "skills/idea2implement/agents/openai.yaml"
   "skills/prototype/agents/openai.yaml"
   "skills/setup-matt-pocock-skills/agents/openai.yaml"
   "skills/tdd/agents/openai.yaml"
+  "skills/to-spec/agents/openai.yaml"
+  "skills/to-tickets/agents/openai.yaml"
+)
+
+expected_explicit_only_metadata=(
+  "skills/grill-with-docs/agents/openai.yaml"
   "skills/to-spec/agents/openai.yaml"
   "skills/to-tickets/agents/openai.yaml"
 )
@@ -127,6 +138,13 @@ for metadata in "${expected_skill_metadata[@]}"; do
   default_prompt="$(sed -n 's/^[[:space:]]*default_prompt:[[:space:]]*//p' "$HARNESS_DIR/$metadata" | head -n 1)"
   if [[ "$default_prompt" != *"\$$skill_name"* ]]; then
     printf 'skill metadata prompt does not reference $%s: %s\n' "$skill_name" "$metadata" >&2
+    missing=1
+  fi
+done
+
+for metadata in "${expected_explicit_only_metadata[@]}"; do
+  if ! grep -Eq '^[[:space:]]+allow_implicit_invocation:[[:space:]]+false[[:space:]]*$' "$HARNESS_DIR/$metadata"; then
+    printf 'skill metadata is not explicit-only: %s\n' "$metadata" >&2
     missing=1
   fi
 done

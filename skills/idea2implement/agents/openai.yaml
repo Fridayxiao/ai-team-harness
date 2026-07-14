@@ -1,4 +1,4 @@
 interface:
   display_name: "Idea2Implement"
-  short_description: "Turn a raw idea into an implementation-ready plan"
-  default_prompt: "Use $idea2implement to align this idea into an implementation-ready plan."
+  short_description: "Align ideas into adaptive, verifiable implementation plans"
+  default_prompt: "Use $idea2implement to align this idea with me and turn accepted decisions into a verifiable implementation plan."

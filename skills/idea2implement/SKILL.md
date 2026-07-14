@@ -1,232 +1,192 @@
 ---
 name: idea2implement
-description: "Use to turn a raw idea into an implementation-ready plan: scope, architecture/tech, spec/TODO/tickets, and handoff."
+description: Turn raw product ideas, vague feature concepts, or partially scoped initiatives into implementation-ready briefs and sliced plans through explicit user alignment, selective research and design, and evidence-backed readiness. Use when moving from an idea or discussion to agreed scope, architecture or technical decisions, a spec, TODO plan, tickets, or implementation handoff. Do not use for already-scoped small implementation work or narrow bug fixes unless the user explicitly wants product-to-implementation alignment.
 ---
 
 # Idea2Implement
 
-Turn a raw idea into an implementation-ready plan without jumping prematurely into code.
+Convert uncertainty into user-accepted decisions and verifiable implementation slices. Coordinate existing skills instead of reproducing their workflows.
 
-This is a meta-skill. It coordinates existing skills and project documents. Do not duplicate what those skills already do; use them at the right stage.
+## Operating Principles
 
-## Core Rule
+- Treat alignment as a loop, not a one-time interview.
+- Use the lightest process that resolves the real uncertainty.
+- Separate evidence, user decisions, assumptions, and open questions.
+- Create only artifacts that help the user decide, implement, verify, or hand off the work.
+- Stop at the handoff the user requested. Planning is the default; if the user also requests implementation, pass the first accepted slice to `$delivery-loop`.
+- Do not publish specs, tickets, or external records until the user approves the content and destination.
 
-Run this as `delivery-loop Documented` from the start.
+## Start With An Alignment Snapshot
 
-The goal is not to produce code immediately. The goal is to make the idea precise enough that implementation can begin with clear product intent, explicit scope, documented architecture decisions, verified technical assumptions, and reviewable execution slices.
+Before choosing architecture or tools, briefly restate:
 
-## Use These Skills
+- the problem or opportunity
+- the target user and desired visible outcome
+- known constraints and non-goals
+- the requested handoff, such as exploration, brief, plan, spec, tickets, or implementation
+- current assumptions and direction-changing open questions
 
-Use available skills as needed:
+State the depth you intend to use and why. Ask one focused question at a time when the answer can change product direction, scope, architecture, or the requested handoff. When the context is already sufficient, state reasonable assumptions and proceed.
 
-- `delivery-loop`: outer control loop for goal, scope, acceptance, verification, review, handoff, and user acceptance.
-- `clarify-and-reuse`: clarify real goal, hidden constraints, reusable local patterns, and current ecosystem options.
-- `grill-with-docs`: stress-test product definition, plan, domain language, and tradeoffs while updating glossary and ADR docs. This already runs `domain-modeling`.
-- `codebase-design`: design Modules, Interfaces, Seams, Adapters, and test surfaces.
-- `write-handoff`: record reusable project knowledge in README, AGENTS, docs, ADRs, runbooks, or plans.
-- `to-spec`: synthesize already-aligned discussion into a spec when issue tracker publishing is desired.
-- `to-tickets`: split an approved spec or plan into vertical-slice tickets with explicit blocking edges.
-- `reuse-opportunity-review`: after the process, extract reusable lessons or skill improvements.
+Do not treat silence as agreement on a material decision. Do not ask for confirmation on trivial or easily reversible choices.
 
-If a listed skill is unavailable, continue with the same responsibility manually and say what is missing.
+## Choose Depth Adaptively
 
-## Workflow
+### Light
 
-### 1. Orient With Delivery Loop
+Use for bounded, low-risk ideas with clear users, outcomes, and constraints. Produce an alignment snapshot and a concise implementation brief in chat. Avoid project documents, deep research, extra skills, and sub-agents by default.
 
-Start by defining:
+### Standard
 
-- goal
-- scope
-- non-goals
-- expected output
-- constraints
-- acceptance criteria
-- verification path
-- review expectations
-- durable records to maintain
+Use as the normal path when some product, codebase, or technical uncertainty remains. Inspect relevant local context, compare meaningful options, align at decision checkpoints, and produce verifiable slices. Write durable records only for knowledge worth preserving.
 
-Ask only questions whose answers can change direction. For minor choices, choose a reasonable default and proceed.
+### Deep
 
-### 2. Clarify Product, Scope, And Domain Language
+Use for high-risk, foundational, multi-system, regulated, security-sensitive, or long-lived initiatives. Add the research, prototypes, ADRs, domain work, or documented delivery controls justified by the risk. Use `$delivery-loop` Documented only when the project needs that level of governance or durable coordination.
 
-Use `clarify-and-reuse` and, when deeper interrogation is needed, `grill-with-docs`.
+Move up or down as uncertainty changes. Do not finish every stage merely because it exists.
 
-Establish:
+## Run The Alignment Loop
 
-- target user
-- core job-to-be-done
-- current pain
-- desired user-visible outcome
-- success signal
+### 1. Frame The Product
+
+Establish only what the current idea needs:
+
+- target user and job-to-be-done
+- current pain or opportunity
+- desired user-visible outcome and success signal
 - primary workflow
-- non-goals
-- scope layers, such as Vision, Validation, Beta, Production
-- canonical domain terms
-- terms to avoid
-- user-facing vs internal concepts
-- source-of-truth concepts
-- state transitions or gates that shape the product
-- what must be true before implementation starts
+- scope and non-goals
+- constraints, source-of-truth concepts, and important state transitions
 
-Let `grill-with-docs` update glossary and ADR docs as decisions crystallize.
+Before architecture work, confirm that the user agrees with the problem, outcome, and scope. If they do not, revise the frame before proceeding.
 
-Do not discuss framework choices before the core product task, scope, and success criteria are clear.
+### 2. Reduce The Important Uncertainty
 
-### 3. Decide Architecture
+Inspect the codebase, project documents, installed dependencies, and current behavior when they constrain the plan. Research current official documentation or primary sources when APIs, products, versions, security guidance, or ecosystem choices may have changed.
 
-Use `codebase-design`.
+Use a prototype or probe when it answers a consequential question more cheaply or reliably than discussion. Do not claim an integration or capability is proven until source evidence, installed types, runtime behavior, or a probe supports it.
 
-Identify:
+### 3. Align On Decisions
 
-- Modules
-- Interfaces
-- Seams
-- Adapters
-- source-of-truth ownership
-- runtime/context/cache/UI state that is not source of truth
-- external side effects that need adapters
-- test surfaces
-- dependency direction
+For each material design or architecture decision:
 
-Prefer deep Modules with small Interfaces. Avoid duplicate mutation paths.
+1. Explain what must be decided and why it matters.
+2. Present two or three viable options when real alternatives exist.
+3. Recommend a default with benefits, downsides, and risks.
+4. Ask for explicit confirmation when the choice changes scope, user experience, architecture, cost, or a hard-to-reverse commitment.
+5. Record the accepted decision and update earlier assumptions or artifacts it invalidates.
 
-Create ADRs when a decision is hard to reverse, surprising without context, and chosen from real tradeoffs.
+Keep discussion concrete. Summarize what you heard, the decision needed, the recommended default, and what would change based on the answer. Do not use a document as a substitute for user discussion.
 
-### 4. Research Technical Choices
+### 4. Build Verifiable Slices
 
-Use current official docs, primary sources, local package docs, or sub-agent research when APIs or ecosystem choices may have changed.
+Turn accepted decisions into dependency-ordered, user-verifiable slices. For each slice include:
 
-Research only decisions that affect maintainability, correctness, security, user experience, or architecture.
-
-Produce a coverage matrix:
-
-```text
-Capability / Risk -> Default Technical Choice -> Status
-```
-
-Include verification gates for:
-
-- fast-moving libraries
-- external APIs
-- provider capabilities
-- framework integration points
-- security-sensitive dependencies
-- package/version assumptions
-
-Do not claim an integration is proven until installed types, docs, or a probe confirm it.
-
-### 5. Create Durable Project Records
-
-Use `write-handoff`.
-
-Maintain a project entrypoint such as `README.md` with:
-
-- current status
-- read-first order
-- accepted architecture
-- implementation guardrails
-- verification gates
-- documentation maintenance rules
-
-Keep reusable research in `docs/research`, significant decisions in `docs/adr`, vocabulary in `CONTEXT.md`, and implementation plans in `docs/plans` or the project's equivalent structure.
-
-Do not leave important decisions only in chat history.
-
-### 6. Synthesize A Spec When Useful
-
-Use `to-spec` only after product definition and major implementation decisions are already aligned.
-
-Do not use `to-spec` as an interview tool. It synthesizes existing context.
-
-Before publishing a spec, confirm the test seams and user-facing outcomes are correct.
-
-### 7. Create Implementation TODO Plan
-
-Create a TODO-style implementation plan with no dates or time estimates unless the user explicitly requests scheduling.
-
-The plan should include:
-
-- slices in dependency order
-- checklist items
+- what user-visible or operational outcome it delivers
+- blockers or prerequisites
 - acceptance criteria
-- verification requirements
-- review gates
-- handoff/documentation updates
+- the verification method and expected evidence
+- documentation or handoff updates only when needed
 
-Prefer implementation slices that are independently verifiable. Avoid pure horizontal slices unless they are necessary prefactoring.
+Prefer vertical tracer bullets. Use horizontal prefactoring only when it creates a necessary seam or keeps later slices independently green. Do not add dates or estimates unless requested.
 
-### 8. Split Tickets When Ready
+### 5. Check Readiness With The User
 
-Use `to-tickets` after the spec or plan is approved.
+Before calling the result implementation-ready, present a compact synthesis and ask the user to confirm that it matches their intent. Reopen an earlier stage when the user changes the goal, scope, or a major decision.
 
-Tickets should be tracer-bullet vertical slices:
+If the work is not ready, say so and identify the smallest next question, research task, or probe. Do not hide unresolved blockers inside a polished plan.
 
-- schema/data
-- command or backend behavior
-- API/route
-- UI
-- tests
-- acceptance criteria
+## Route To Other Skills Selectively
 
-Each ticket should be demoable or independently verifiable and sized for one fresh context window.
+Invoke only the smallest set needed for the current uncertainty:
 
-Do not publish tickets before the user approves the slice breakdown and blocking edges.
+- Use `$clarify-and-reuse` for material intent ambiguity or meaningful local-versus-ecosystem choices.
+- Use `$grill-with-docs` when the user wants a deep stress test or high-impact product, domain, or trade-off questions need sustained interrogation and durable records. This is a user-invoked skill in this harness; follow the visibility guidance below.
+- Use `$domain-modeling` when shared vocabulary or state transitions need explicit treatment without a full grilling session.
+- Use `$codebase-design` when new or changed Modules, Interfaces, Seams, Adapters, or test surfaces actually need design.
+- Use `$prototype` when an experiment is the cheapest way to answer a product, state, interaction, or architecture question.
+- Use `$delivery-loop` when the work continues into execution or needs full delivery governance. Choose its mode from the task; do not force Documented mode.
+- Use `$write-handoff` when work spans sessions or creates lasting project knowledge.
+- Use `$to-spec` only after alignment when the user wants a spec published to the configured tracker. This is a user-invoked skill in this harness.
+- Use `$to-tickets` only after the slice breakdown is approved and the user wants tickets created. This is a user-invoked skill in this harness.
+- Use `$reuse-opportunity-review` after substantial completed work when extracting reusable lessons is worthwhile.
 
-### 9. Readiness Review
+### Handle Explicit-Only And Invisible Skills
 
-Before saying implementation can start, check:
+In this harness, treat `$grill-with-docs`, `$to-spec`, and `$to-tickets` as explicit-only unless the active context shows that the user already invoked them. They may be installed but absent from the agent's default skill catalog.
 
-- product definition is stable enough
-- scope and non-goals are explicit
-- domain vocabulary is captured
-- architecture decisions are recorded
-- coverage matrix has no unexplained gaps
-- verification gates are explicit
-- implementation plan exists
-- handoff entrypoint is updated
-- unresolved risks are named
+When an explicit-only skill is the best next step but is not visible:
 
-Use a sub-agent review for complex plans when available or required by project instructions.
+1. Tell the user that it requires explicit invocation and why it would help.
+2. Ask the user to invoke the exact `$skill-name`.
+3. Do not offer or perform a substitute workflow, and do not claim the skill was activated or followed unless it is actually available in the active context.
 
-## Output Shape
+For example: "A deeper stress test with durable ADR and glossary updates requires `$grill-with-docs`, which must be invoked explicitly here. Please invoke `$grill-with-docs` to continue that workflow."
 
-For alignment work, prefer these artifacts:
+Apply the same rule to any other routed skill missing from the current catalog. If it is not installed at all, say it is unavailable. Do not invoke skills merely because they are listed here.
 
-- product spec or PRD
-- `CONTEXT.md` glossary updates
-- ADRs
-- architecture draft
-- technical research note
-- coverage matrix
-- README / handoff entrypoint
-- implementation TODO plan
-- vertical-slice ticket breakdown
+## Use Sub-Agents Deliberately
 
-Use only the artifacts the situation warrants. Do not create documents for ceremony.
+Handle a normal idea-to-plan session directly. Use a sub-agent only when independent review, specialized research, parallel exploration, or risk isolation materially improves the result.
 
-## Anti-Patterns
+Do not use a sub-agent:
 
-- Jumping from idea directly to code.
-- Asking many low-impact questions instead of making reasonable defaults.
-- Choosing frameworks before product success criteria are clear.
-- Treating chat memory, frontend state, or agent memory as product source of truth without explicitly deciding so.
-- Recording decisions only in conversation.
-- Creating ADRs for trivial or easily reversible choices.
-- Turning implementation plans into schedules when the user asked for TODOs.
-- Splitting issues by technical layer instead of vertical user-verifiable slices.
-- Automating or scripting a process before the workflow has stabilized.
+- to conduct user alignment
+- to repeat analysis the main agent can do efficiently
+- solely because sub-agents are available
+- solely to satisfy this skill
 
-## Completion Criteria
+One focused sub-agent is often enough. Follow stricter user or project requirements when they apply. Give every delegated task a self-contained brief, treat its output as advisory, and keep final synthesis, conflict resolution, and verification with the main agent.
 
-The process is complete when the user can reasonably say:
+## Keep A Compact Evidence Ledger
 
-- what is being built
-- why it matters
-- what is out of scope
-- what architecture will be used
-- which technical choices are accepted
-- which assumptions still need verification
-- what the first implementation slice is
-- how progress will be verified
-- where the next agent or human should read first
+For Standard and Deep work, track material items with one of these states:
+
+- **Verified**: supported by inspected code, current documentation, a probe, or other cited evidence
+- **Accepted**: explicitly chosen or confirmed by the user
+- **Assumed**: unverified but safe enough to proceed provisionally
+- **Open**: unresolved and capable of changing or blocking the plan
+
+Keep the ledger in chat for short work and in the project's normal planning or decision records when it has lasting value. Never convert a recommendation into an accepted decision without the user's confirmation.
+
+## Produce The Minimum Useful Handoff
+
+An implementation-ready brief normally contains:
+
+1. Problem, target user, and desired outcome
+2. Scope and non-goals
+3. Accepted decisions and relevant trade-offs
+4. Architecture or technical choices only where needed
+5. Dependency-ordered implementation slices
+6. Acceptance criteria and verification evidence for each slice
+7. Assumptions, open risks, and explicit verification gates
+8. The first executable slice and where the next person should read first
+
+Add a PRD, glossary, ADR, research note, README update, or ticket set only when the project or user needs it. Use project conventions and avoid duplicating the same decision across artifacts.
+
+## Readiness Standard
+
+Call the plan implementation-ready only when:
+
+- the user has accepted the problem framing, scope, and non-goals
+- material product and architecture decisions are accepted or explicitly deferred
+- technical claims that affect the first slice are verified or gated
+- every slice has an observable outcome, acceptance criteria, and verification method
+- no unexplained Open item blocks the first slice
+- the first slice and read-first context are clear
+- the user has confirmed that the final synthesis matches their intent
+
+Otherwise report **Not ready**, the blocking items, and the smallest next step.
+
+## Avoid
+
+- Forcing `$delivery-loop` Documented on every idea
+- Turning alignment into a long questionnaire
+- Choosing frameworks before agreeing on the product outcome
+- Silently treating assumptions or recommendations as user decisions
+- Creating a full artifact suite for ceremony
+- Requiring sub-agents for routine work
+- Treating documentation or passing tests as proof of user acceptance
+- Splitting ordinary feature work only by technical layer
+- Claiming readiness while direction-changing questions remain open

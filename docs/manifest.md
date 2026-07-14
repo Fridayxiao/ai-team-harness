@@ -13,7 +13,7 @@ These harness copies originate from local user-level sources or retained local b
 | `delivery-loop` | `plugins/orchestrated-delivery/skills/delivery-loop` |
 | `design-taste-frontend` | `/Users/david/.agents/skills/design-taste-frontend` |
 | `emil-design-eng` | `/Users/david/.agents/skills/emil-design-eng` |
-| `idea2implement` | `/Users/david/.agents/skills/idea2implement`, then updated for `to-spec` / `to-tickets` |
+| `idea2implement` | `/Users/david/.agents/skills/idea2implement`, then redesigned for adaptive depth, repeated user-alignment checkpoints, evidence-backed readiness, visibility-aware skill routing, and conditional sub-agent use |
 | `musk-5-step` | `/Users/david/.agents/skills/musk-5-step` |
 | `redesign-existing-projects` | `/Users/david/.agents/skills/redesign-existing-projects` |
 | `reuse-opportunity-review` | `/Users/david/.agents/skills/reuse-opportunity-review` |
